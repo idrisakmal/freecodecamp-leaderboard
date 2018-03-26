@@ -65,7 +65,7 @@ class Leaderboard extends React.Component {
                                     ? this.state.data[this.state.filter].map((person, i) => 
                                         <Camper 
                                             key={i}
-                                            index={i}
+                                            index={i + 1}
                                             name={person.username}
                                             img={person.img}
                                             alltime={person.alltime}
@@ -88,7 +88,10 @@ class Camper extends React.Component {
             <React.Fragment>
                 <tr>
                     <td>{this.props.index}</td>
-                    <td>{this.props.name}</td>
+                    <td>
+                        {this.props.name}
+                        <img className="image is-64x64" src={this.props.img}/>
+                    </td>
                     <td>{this.props.recent}</td>
                     <td>{this.props.alltime}</td>
                 </tr>
